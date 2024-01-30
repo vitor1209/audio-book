@@ -2,6 +2,7 @@ const btn_play_pause = document.getElementById('play-pause');
 const audio_cap = document.getElementById('audio-capitulo');
 const btn_avancar = document.getElementById('proximo');
 const lbl_cap = document.getElementById('capitulo')
+const btn_voltar = document.getElementById('anterior')
 
 const numeroCapitulos = 10;
 let ta_tocando = 0;
@@ -40,10 +41,24 @@ function avancar_cap (){
     tocar_audio();
     btn_play_pause.classList.remove("bi-play-circle-fill");
     btn_play_pause.classList.add("bi-pause-circle-fill");
-    lbl_cap.innerText = 'capitulo' + cap_atual
+    lbl_cap.innerText = 'Capítulo' + '  ' + cap_atual
 }
 
+function voltar_cap(){
+    if (cap_atual === 1) {
+        cap_atual = 10;
+    } else {
+        cap_atual = cap_atual - 1;
+    }
+    
+    audio_cap.src = "books/dom-casmurro/" + cap_atual + ".mp3";
+    tocar_audio();
+    btn_play_pause.classList.remove("bi-play-circle-fill");
+    btn_play_pause.classList.add("bi-pause-circle-fill");
+    lbl_cap.innerText = 'Capítulo' + '  ' + cap_atual
+}
 
+btn_voltar.addEventListener('click', voltar_cap);
 btn_avancar.addEventListener('click', avancar_cap);
 btn_play_pause.addEventListener('click', tocar_parar);
 audio_cap.addEventListener("ended", avancar_cap);
