@@ -7,4 +7,4 @@ function tocar_audio() {
     audio_cap.play();
 }
 
-btn_play_pause.onclick(tocar_audio)
+btn_play_pause.addEventListener('click', tocar_audio);
