@@ -1,5 +1,5 @@
 const btn_play_pause = document.getElementById('play-pause');
-const audio_cap = document.getElementById('audio-capitulos');
+const audio_cap = document.getElementById('audio-capitulo');
 const btn_avancar = document.getElementById('proximo');
 const lbl_cap = document.getElementById('capitulo')
 
