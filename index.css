@@ -40,12 +40,14 @@ button {
 
 #anterior, #proximo {
   font-size: 3rem;
-
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #play-pause {
   font-size: 4rem;
-
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .campo-botoes {
