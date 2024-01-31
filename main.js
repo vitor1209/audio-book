@@ -12,7 +12,14 @@ function tocar_audio() {
     ta_tocando = 1;
     btn_play_pause.classList.remove("bi-play-circle-fill");
     btn_play_pause.classList.add("bi-pause-circle-fill");
-    audio_cap.play();
+    if (audio_cap.readyState >= 2) {
+        audio_cap.play();
+    } else {
+        // Adiciona um evento de carregamento para aguardar o áudio carregar completamente
+        audio_cap.addEventListener('loadeddata', function() {
+            audio_cap.play();
+        });
+}
 }
 
 function parar_audio() {

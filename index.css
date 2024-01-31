@@ -20,6 +20,7 @@ button {
   color: inherit;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .music-container {
